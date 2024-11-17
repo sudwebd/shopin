@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success - shopin</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="header-logo-link">
+                    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="shopin Logo"
+                        class="header-logo">
+                    <span class="header-text">shopin</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Success Message Section -->
+    <section class="success-section">
+        <div class="container">
+            <div class="success-content">
+                <img src="{{ url_for('static', filename='images/success.png') }}" alt="Success" class="success-icon">
+                <h1>Thank you for joining!</h1>
+                <p>You're now on our waitlist. We'll notify you as soon as we go live.</p>
+                <a href="/" class="btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="shopin Logo"
+                            class="footer-logo-img">
+                        <span class="footer-logo-text">shopin</span>
+                    </div>
+                    <p class="footer-description">
+                        Making fashion shopping seamless and enjoyable with smart technology.
+                    </p>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:meet@shopin.fashion">meet@shopin.fashion</a></li>
+                            <li><a href="tel:+917060904435">+91 7060904435</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Address</h4>
+                        <ul>
+                            <li>HSR Layout, Bangalore, Karnataka</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

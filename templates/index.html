@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
-    <!-- Head content -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shopin - No more wasted fashion shopping trips</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,6 +23,19 @@
 </head>
 
 <body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="header-logo-link">
+                    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="shopin Logo"
+                        class="header-logo">
+                    <span class="header-text">shopin</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
     <div class="flash-messages">
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -37,16 +52,18 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-header">
+            <!-- <div class="hero-header">
                 <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="shopin Logo" class="hero-logo">
                 <h1 class="hero-title">shopin</h1>
-            </div>
-            <h2>No more wasted fashion shopping trips</h2>
+            </div> -->
+            <h1>No more wasted fashion shopping trips</h1>
+            <h2>🙅‍♀️</h2>
+            </br></br>
             <p class="subtitle">Browse store collections, save your favs, try & buy - all seamlessly.</p>
-            <div class="form-group">
-                <input type="tel" placeholder="Enter phone number" pattern="[0-9]{10}" required>
+            <form action="{{ url_for('success') }}" method="POST" class="form-group">
+                <input type="tel" name="phone" placeholder="Enter phone number" pattern="[0-9]{10}" required>
                 <button type="submit" class="btn-primary">Get Early Access</button>
-            </div>
+            </form>
         </div>
     </section>
 
@@ -74,6 +91,12 @@
                     <h3>Scan, Pay, and Go</h3>
                     <p>Check out effortlessly with mobile & avoid long queues.</p>
                 </div>
+                <div class="feature-card">
+                    <img src="{{ url_for('static', filename='images/delivery.png') }}" alt="Earn Rewards"
+                        class="feature-icon">
+                    <h3>Get it delivered</h3>
+                    <p>Choose from pick-up in store or 2-3 hour delivery options.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -87,6 +110,7 @@
                 <img src="{{ url_for('static', filename='images/puma.png') }}" alt="Puma">
                 <img src="{{ url_for('static', filename='images/decathlon.png') }}" alt="Decathlon">
                 <img src="{{ url_for('static', filename='images/zara.png') }}" alt="Zara">
+                <img src="{{ url_for('static', filename='images/westside.jpg') }}" alt="Nike">
             </div>
         </div>
     </section>
@@ -96,17 +120,16 @@
         <div class="container">
             <h2>Get early access</h2>
             <p>Join our waitlist today, and be the first one to be notified as we go live soon!</p>
-            <div class="form-group">
-                <input type="tel" placeholder="Enter phone number" pattern="[0-9]{10}" required>
+            <form action="{{ url_for('success') }}" method="POST" class="form-group">
+                <input type="tel" name="phone" placeholder="Enter phone number" pattern="[0-9]{10}" required>
                 <button type="submit" class="btn-primary">Get Early Access</button>
-            </div>
+            </form>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <div class="footer-content">
-                <!-- Left Section: Logo + Text -->
                 <div class="footer-left">
                     <div class="footer-logo">
                         <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="shopin Logo"
@@ -118,7 +141,6 @@
                     </p>
                 </div>
 
-                <!-- Right Section: Contact & Address -->
                 <div class="footer-right">
                     <div class="footer-section">
                         <h4>Contact</h4>
@@ -138,17 +160,27 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Flash message close button
             document.querySelectorAll('.close-btn').forEach(button => {
                 button.addEventListener('click', function () {
                     this.parentElement.style.display = 'none';
                 });
             });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function () {
+                const header = document.querySelector('.fixed-header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
         });
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>

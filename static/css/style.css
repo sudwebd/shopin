@@ -15,10 +15,11 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.8;
     color: var(--text-color);
     background: var(--bg-color);
+    padding-top: 70px;
 }
 
 .container {
@@ -44,17 +45,66 @@ p {
     color: var(--light-text);
 }
 
+/* Fixed Header Styles */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.fixed-header.scrolled {
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.header-logo {
+    width: 35px;
+    height: 35px;
+    transition: all 0.3s ease;
+}
+
+.header-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.scrolled .header-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.scrolled .header-text {
+    font-size: 20px;
+}
+
 /* Hero Section */
 .hero {
     padding: 120px 0;
-    /* Increased top padding */
     text-align: center;
     min-height: 80vh;
-    /* Ensures it takes the full height of the viewport */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Vertically center content */
 }
 
 .hero-header {
@@ -77,8 +127,8 @@ p {
     color: var(--primary-color);
 }
 
-.hero h2 {
-    font-size: 32px;
+.hero h1 {
+    font-size: 50px;
     margin-bottom: 24px;
     color: #2c3e50;
     background: linear-gradient(45deg, #2196F3, #1E88E5);
@@ -86,13 +136,26 @@ p {
     -webkit-text-fill-color: transparent;
     text-shadow: 0 2px 4px rgba(33, 150, 243, 0.1);
     letter-spacing: -0.5px;
+    display: inline
+}
+
+.hero h2 {
+    font-size: 50px;
+    margin-bottom: 24px;
+    /* color: #2c3e50; */
+    /* background: linear-gradient(45deg, #2196F3, #1E88E5); */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+    /* text-shadow: 0 2px 4px rgba(33, 150, 243, 0.1); */
+    letter-spacing: -0.5px;
+    display: inline
 }
 
 .hero .subtitle {
-    font-size: 18px;
+    font-size: 25px;
     color: #546e7a;
     margin-bottom: 48px;
-    max-width: 600px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -100,7 +163,6 @@ p {
 /* Features Section */
 .features {
     padding: 60px 0;
-    /* Reduced top padding */
     background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
 }
 
@@ -115,26 +177,24 @@ p {
 }
 
 .features-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .feature-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1 1 calc(33.333% - 60px);
-    text-align: center;
-    border: 1px solid #ddd;
     background: white;
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feature-card:hover {
@@ -195,6 +255,11 @@ p {
     background: white;
     padding: 20px;
     border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.brand-grid img:hover {
+    transform: scale(1.05);
 }
 
 /* Waitlist Section */
@@ -212,32 +277,37 @@ p {
     margin-bottom: 48px;
 }
 
-.fixed-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #e0e0e0;
-    z-index: 1000;
-    padding: 10px 0;
-}
-
-.header-content {
+/* Success Page Styles */
+.success-section {
+    min-height: calc(100vh - 70px);
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 0;
 }
 
-.header-logo {
-    width: 30px;
-    height: 30px;
+.success-content {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.header-text {
-    font-size: 20px;
-    font-weight: 600;
+.success-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
+}
+
+.success-content h1 {
+    font-size: 36px;
     color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.success-content p {
+    font-size: 18px;
+    color: var(--light-text);
+    margin-bottom: 30px;
 }
 
 /* Form Styles */
@@ -277,12 +347,16 @@ input[type="tel"]::placeholder {
     padding: 0 32px;
     background: linear-gradient(45deg, #2196F3, #1E88E5);
     border: none;
-    border-radius: 8px;
+    border-radius: 1px;
     color: white;
     font-weight: 600;
     font-size: 15px;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-primary:hover {
@@ -290,21 +364,7 @@ input[type="tel"]::placeholder {
     transform: translateY(-1px);
 }
 
-/* Flash Messages */
-.flash-messages {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.alert {
-    padding: 15px 40px 15px 15px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
+/* Footer Styles */
 footer {
     padding: 60px 0;
     background: #f8f9fa;
@@ -328,15 +388,12 @@ footer {
 .footer-logo {
     display: flex;
     align-items: center;
-    /* Align logo and text vertically */
     gap: 10px;
-    /* Add space between logo and text */
     margin-bottom: 10px;
 }
 
 .footer-logo-img {
     width: 30px;
-    /* Adjust the size of the logo */
     height: 30px;
 }
 
@@ -350,10 +407,6 @@ footer {
     color: #546e7a;
     font-size: 15px;
     line-height: 1.6;
-}
-
-.footer-section {
-    text-align: centre;
 }
 
 .footer-section h4 {
@@ -386,56 +439,86 @@ footer {
     color: #2196F3;
 }
 
-@media (max-width: 768px) {
-    .footer-section {
-        text-align: center;
-        /* Center-aligns the text in each footer section */
-        margin-bottom: 20px;
-        /* Adds spacing between sections */
-    }
-
-    .footer-section ul {
-        display: inline-block;
-        /* Ensures the list (ul) behaves as a centered block */
-        text-align: left;
-        /* Aligns the list items to the left inside their block */
-        margin: 0 auto;
-        /* Centers the list block itself on the screen */
-    }
-
-    .footer-content {
-        flex-direction: column;
-        /* Stacks the footer sections vertically */
-        text-align: center;
-        /* Centers the overall footer content */
-    }
+/* Flash Messages */
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
-
+.alert {
+    padding: 15px 40px 15px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .feature-card {
-        flex: 1 1 calc(50% - 60px);
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .brand-grid img {
+        width: 120px;
+        height: 120px;
     }
 }
 
 @media (max-width: 768px) {
-    .feature-card {
-        flex: 1 1 100%;
+    .features-grid {
+        grid-template-columns: 1fr;
     }
 
     .footer-content {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .footer-logo {
+        justify-content: center;
     }
 
     .footer-right {
-        justify-content: flex-start;
-        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 0;
     }
 
-    .footer-links {
-        align-items: flex-start;
+    .footer-section {
+        margin-bottom: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-description {
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .footer-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-section ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .form-group {
@@ -445,5 +528,42 @@ footer {
     .form-group input,
     .form-group button {
         width: 100%;
+    }
+
+
+    .brand-grid {
+        gap: 20px;
+    }
+
+    .brand-grid img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .header-text {
+        font-size: 20px;
+    }
+
+    .header-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer-description {
+        max-width: 100%;
+    }
+
+    .footer-section {
+        padding: 0 20px;
     }
 }
