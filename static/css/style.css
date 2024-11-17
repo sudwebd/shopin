@@ -160,6 +160,11 @@ p {
     margin-right: auto;
 }
 
+.waitlist .subtitle {
+    font-size: 25px;
+    color: #546e7a;
+}
+
 /* Features Section */
 .features {
     padding: 60px 0;
@@ -236,7 +241,9 @@ p {
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
-    color: #2c3e50;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .brand-grid {
@@ -271,6 +278,9 @@ p {
 
 .waitlist h2 {
     margin-bottom: 24px;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .waitlist p {
@@ -414,7 +424,7 @@ footer {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #2c3e50;
+    color: #546e7a;
     margin-bottom: 10px;
 }
 

@@ -91,9 +91,10 @@
                     <h3>Scan, Pay, and Go</h3>
                     <p>Check out effortlessly with mobile & avoid long queues.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card"></br>
                     <img src="{{ url_for('static', filename='images/delivery.png') }}" alt="Earn Rewards"
                         class="feature-icon">
+                    </br>
                     <h3>Get it delivered</h3>
                     <p>Choose from pick-up in store or 2-3 hour delivery options.</p>
                 </div>
@@ -119,7 +120,7 @@
     <section class="waitlist">
         <div class="container">
             <h2>Get early access</h2>
-            <p>Join our waitlist today, and be the first one to be notified as we go live soon!</p>
+            <p class="subtitle">Join our waitlist today, and be the first one to be notified as we go live soon!</p>
             <form action="{{ url_for('success') }}" method="POST" class="form-group">
                 <input type="tel" name="phone" placeholder="Enter phone number" pattern="[0-9]{10}" required>
                 <button type="submit" class="btn-primary">Get Early Access</button>
@@ -152,7 +153,7 @@
                     <div class="footer-section">
                         <h4>Address</h4>
                         <ul>
-                            <li>HSR Layout, Bangalore, Karnataka</li>
+                            <li><a>HSR Layout, Bangalore, Karnataka</a></li>
                         </ul>
                     </div>
                 </div>
