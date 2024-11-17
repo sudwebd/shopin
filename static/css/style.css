@@ -212,6 +212,34 @@ p {
     margin-bottom: 48px;
 }
 
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.header-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
 /* Form Styles */
 .form-group {
     display: flex;
@@ -285,39 +313,47 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    /* Space between left and right sections */
     align-items: flex-start;
 }
 
 .footer-left {
     flex: 1;
-    /* Take up space for alignment */
-    max-width: 50%;
-    /* Prevents it from taking up too much space */
 }
 
 .footer-right {
     flex: 1;
-    /* Take up space for alignment */
-    max-width: 50%;
-    /* Prevents it from taking up too much space */
     text-align: right;
-    /* Align content to the right */
 }
 
 .footer-logo {
+    display: flex;
+    align-items: center;
+    /* Align logo and text vertically */
+    gap: 10px;
+    /* Add space between logo and text */
+    margin-bottom: 10px;
+}
+
+.footer-logo-img {
+    width: 30px;
+    /* Adjust the size of the logo */
+    height: 30px;
+}
+
+.footer-logo-text {
     font-size: 24px;
     font-weight: 700;
     color: #2196F3;
-    margin-bottom: 10px;
-    /* Add spacing between logo and description */
 }
 
 .footer-description {
     color: #546e7a;
     font-size: 15px;
     line-height: 1.6;
-    margin: 0;
+}
+
+.footer-section {
+    text-align: centre;
 }
 
 .footer-section h4 {
@@ -327,7 +363,6 @@ footer {
     letter-spacing: 1px;
     color: #2c3e50;
     margin-bottom: 10px;
-    /* Add space below heading */
 }
 
 .footer-section ul {
@@ -338,7 +373,6 @@ footer {
 
 .footer-section li {
     margin-bottom: 8px;
-    /* Add space between items */
 }
 
 .footer-section a {
@@ -352,22 +386,32 @@ footer {
     color: #2196F3;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        /* Stack items vertically */
+    .footer-section {
         text-align: center;
-        /* Center align text */
+        /* Center-aligns the text in each footer section */
+        margin-bottom: 20px;
+        /* Adds spacing between sections */
     }
 
-    .footer-right {
+    .footer-section ul {
+        display: inline-block;
+        /* Ensures the list (ul) behaves as a centered block */
+        text-align: left;
+        /* Aligns the list items to the left inside their block */
+        margin: 0 auto;
+        /* Centers the list block itself on the screen */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        /* Stacks the footer sections vertically */
         text-align: center;
-        /* Center align text */
-        margin-top: 20px;
-        /* Add space between left and right sections */
+        /* Centers the overall footer content */
     }
 }
+
+
 
 /* Responsive Design */
 @media (max-width: 992px) {

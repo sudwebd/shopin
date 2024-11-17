@@ -103,16 +103,22 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
+                <!-- Left Section: Logo + Text -->
                 <div class="footer-left">
-                    <div class="footer-logo">shopin</div>
+                    <div class="footer-logo">
+                        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="shopin Logo"
+                            class="footer-logo-img">
+                        <span class="footer-logo-text">shopin</span>
+                    </div>
                     <p class="footer-description">
                         Making fashion shopping seamless and enjoyable with smart technology.
                     </p>
                 </div>
+
+                <!-- Right Section: Contact & Address -->
                 <div class="footer-right">
                     <div class="footer-section">
                         <h4>Contact</h4>
