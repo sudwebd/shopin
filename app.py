@@ -7,10 +7,6 @@ app.config['SECRET_KEY'] = 'your-secret-key-here'  # Required for flash messages
 # Simple in-memory storage (will reset when server restarts)
 waitlist_entries = []
 
-@app.route('/success')
-def success():
-    return render_template('templates/success.html')
-
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
@@ -38,6 +34,10 @@ def home():
             return redirect(url_for('home'))
     
     return render_template('index.html')
+
+@app.route('/success', methods=['GET', 'POST'])
+def success():
+    return render_template('success.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
