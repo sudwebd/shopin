@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- Head content -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shopin - No more wasted fashion shopping trips</title>
@@ -106,14 +107,13 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
+                <div class="footer-left">
                     <div class="footer-logo">shopin</div>
                     <p class="footer-description">
                         Making fashion shopping seamless and enjoyable with smart technology.
                     </p>
                 </div>
-
-                <div class="footer-links">
+                <div class="footer-right">
                     <div class="footer-section">
                         <h4>Contact</h4>
                         <ul>
@@ -121,7 +121,6 @@
                             <li><a href="tel:+917060904435">+91 7060904435</a></li>
                         </ul>
                     </div>
-
                     <div class="footer-section">
                         <h4>Address</h4>
                         <ul>
@@ -133,10 +132,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Close flash messages
             document.querySelectorAll('.close-btn').forEach(button => {
                 button.addEventListener('click', function () {
                     this.parentElement.style.display = 'none';
@@ -146,26 +143,6 @@
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize all Materialize components
-            M.AutoInit();
-
-            // Custom initialization for specific components if needed
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-
-            // Flash message auto-close
-            var flashMessages = document.querySelectorAll('.alert');
-            flashMessages.forEach(function (message) {
-                setTimeout(function () {
-                    M.toast({ html: message.innerText, classes: 'rounded' });
-                    message.style.display = 'none';
-                }, 4000);
-            });
-        });
-    </script>
 </body>
 
 </html>
