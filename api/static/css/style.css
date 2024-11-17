@@ -93,6 +93,31 @@ p {
     margin-right: auto;
 }
 
+.hero-header {
+    /* display: flex; */
+    /* Use flexbox for alignment */
+    align-items: center;
+    /* Center items vertically */
+    /* margin-bottom: 20px; */
+    /* Space between header and subtitle */
+}
+
+.hero-logo {
+    width: 50px;
+    /* Set a fixed width for the logo */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-right: 10px;
+    /* Space between logo and text */
+}
+
+.hero-title {
+    font-size: 3rem;
+    /* Adjust font size as needed */
+    font-weight: 700;
+    /* Bold font weight */
+}
+
 /* Features Section */
 .features {
     padding: 100px 0;
@@ -123,7 +148,8 @@ p {
 }
 
 .features-grid {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1200px;
@@ -132,6 +158,9 @@ p {
 }
 
 .feature-card {
+    flex: 1;
+    text-align: center;
+    border: 1px solid #ddd;
     background: white;
     padding: 40px;
     border-radius: 16px;
@@ -182,6 +211,21 @@ p {
     line-height: 1.6;
     color: #546e7a;
     margin: 0;
+}
+
+.feature-icon {
+    width: 297px;
+    /* Set a fixed width */
+    height: 231px;
+    /* Set a fixed height */
+    object-fit: cover;
+    /* Ensure the image covers the area */
+    margin-bottom: 15px;
+    /* Space between image and text */
+    margin: 0 auto;
+    /* Center the image horizontally */
+    display: block;
+    /* Make the image a block element to center it */
 }
 
 /* Brands Section */

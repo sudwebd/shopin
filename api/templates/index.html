@@ -36,7 +36,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>shopin</h1>
+            <div class="hero-header">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="shopin Logo" class="hero-logo">
+                <h1 class="hero-title">shopin</h1>
+            </div>
             <h2>No more wasted fashion shopping trips</h2>
             <p class="subtitle">Browse store collections, save your favs, try & buy - all seamlessly.</p>
             <div class="form-group">
@@ -52,18 +55,21 @@
             <h2>What if you could get shopping superpowers?</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-store"></i>
+                    <img src="{{ url_for('static', filename='images/discover.png') }}" alt="Discover what's in stock"
+                        class="feature-icon">
                     <h3>Discover what's in stock</h3>
                     <p>Browse each store's collection with available sizes, create a wish-list & skip unnecessary
                         store-hopping.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-clock"></i>
+                    <img src="{{ url_for('static', filename='images/fasttrack.png') }}"
+                        alt="Fast-track your fitting room experience" class="feature-icon">
                     <h3>Fast-track your fitting room experience</h3>
                     <p>Join a digital queue & say goodbye to long waits.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-mobile-alt"></i>
+                    <img src="{{ url_for('static', filename='images/scanpay.png') }}" alt="Scan, Pay, and Go"
+                        class="feature-icon">
                     <h3>Scan, Pay, and Go</h3>
                     <p>Check out effortlessly with mobile & avoid long queues.</p>
                 </div>
